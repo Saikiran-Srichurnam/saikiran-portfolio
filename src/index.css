@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-slate-800 overflow-x-hidden;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 25s linear infinite;
+  }
+  .animate-spin-rev {
+    animation: spinRev 35s linear infinite;
+  }
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite 2s;
+  }
+  .animate-pulse-dot {
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  .animate-orb1 {
+    animation: orbFloat 8s ease-in-out infinite;
+  }
+  .animate-orb2 {
+    animation: orbFloat 10s ease-in-out infinite 4s;
+  }
+  .animate-orb3 {
+    animation: orbFloat 6s ease-in-out infinite 2s;
+  }
+  .animate-tag1 {
+    animation: tagFloat1 4s ease-in-out infinite;
+  }
+  .animate-tag2 {
+    animation: tagFloat2 5s ease-in-out infinite;
+  }
+  .animate-tag3 {
+    animation: tagFloat3 4.5s ease-in-out infinite;
+  }
+  .animate-tag4 {
+    animation: tagFloat4 5.5s ease-in-out infinite;
+  }
+  .animate-tag5 {
+    animation: tagFloat5 4.8s ease-in-out infinite;
+  }
+  .animate-tag6 {
+    animation: tagFloat6 5.2s ease-in-out infinite;
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(38px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .fade-right {
+    opacity: 0;
+    transform: translateX(38px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+  .fade-up.visible,
+  .fade-left.visible,
+  .fade-right.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+    border-radius: 10px;
+    width: 0;
+    transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1deg);
+  }
+}
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinRev {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+@keyframes tagFloat1 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-12px) translateX(4px);
+  }
+}
+
+@keyframes tagFloat2 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(12px) translateX(-6px);
+  }
+}
+
+@keyframes tagFloat3 {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes tagFloat4 {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes tagFloat5 {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(8px) translateX(8px);
+  }
+}
+
+@keyframes tagFloat6 {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
